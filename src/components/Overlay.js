@@ -14,7 +14,7 @@ class Overlay extends Component<OverlayProps> {
     onPress: () => {},
   };
 
-  componentWillReceiveProps(nextProps: OverlayProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: OverlayProps) {
     const { visible, useNativeDriver, animationDuration: duration } = this.props;
     if (visible !== nextProps.visible) {
       const toValue = nextProps.visible ? nextProps.opacity : 0;

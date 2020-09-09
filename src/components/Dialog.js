@@ -100,6 +100,11 @@ class Dialog extends Component<DialogProps, State> {
       this.show();
     }
     BackHandler.addEventListener(HARDWARE_BACK_PRESS_EVENT, this.onHardwareBackPress);
+    Dimensions.addEventListener('change', newDimensions => {
+      console.log("addEventListener dimension change");
+      this.forceUpdate();
+      console.log('dialogSize',this.dialogSize())
+    });
   }
 
   componentDidUpdate(prevProps: DialogProps) {
